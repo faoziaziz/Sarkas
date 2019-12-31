@@ -23,7 +23,7 @@ public class Swagger2Config {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors
-						.basePackage("net.guides.springboot2.springboot2swagger2.controller"))
+						.basePackage("package com.labseni.Sarkas.Controller"))
 				.paths(PathSelectors.regex("/.*"))
 				.build().apiInfo(apiEndPointsInfo());
 	}
