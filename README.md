@@ -20,4 +20,5 @@ CREATE TABLE IF NOT EXISTS Crot (
 ```
 
 ## Referensi 
-1. [Untuk case sensitif] (https://stackoverflow.com/questions/28571848/spring-boot-jpa-insert-in-table-with-uppercase-name-with-hibernate) 
+1. [Untuk case sensitif](https://stackoverflow.com/questions/28571848/spring-boot-jpa-insert-in-table-with-uppercase-name-with-hibernate) 
+2. [Untuk Setting Swagger](https://www.javaguides.net/2018/10/spring-boot-2-restful-api-documentation-with-swagger2-tutorial.html)

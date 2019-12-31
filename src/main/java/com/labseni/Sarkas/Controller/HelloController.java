@@ -1,3 +1,7 @@
+/*
+	Hello controller 
+*/
+
 package com.labseni.Sarkas.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
