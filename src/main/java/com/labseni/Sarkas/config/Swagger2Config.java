@@ -23,7 +23,7 @@ public class Swagger2Config {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors
-						.basePackage("package com.labseni.Sarkas.Controller"))
+						.basePackage("com.labseni.Sarkas.Controller"))
 				.paths(PathSelectors.regex("/.*"))
 				.build().apiInfo(apiEndPointsInfo());
 	}

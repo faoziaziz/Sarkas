@@ -35,7 +35,7 @@ import com.labseni.Sarkas.model.User;
 import com.labseni.Sarkas.model.UserRepository;
 
 @RestController
-@RequestMapping("/api/v2")
+@RequestMapping("/")
 @Api(value="Sexy management System", description = "Sexy mantap")
 public class HelloController {
 	@Autowired
