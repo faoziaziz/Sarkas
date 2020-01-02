@@ -7,17 +7,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name="Crot")
+@ApiModel(description="All details about the Employee. ")
 public class User {
 	  @Id
 	  @GeneratedValue(strategy=GenerationType.IDENTITY)
 	  @Column(name="id")
+
+	  @ApiModelProperty(notes = "The database generated User ID")
 	  private Integer id;
 	  
+	  @ApiModelProperty(notes = "The user name")
 	  @Column (name="name")
 	  private String name;
-	  
+
+	  @ApiModelProperty(notes = "The user email")
 	  @Column(name="email")
 	  private String email;
 

@@ -32,7 +32,7 @@ public class Swagger2Config {
 
 		return new ApiInfoBuilder().title("Sex API")
 				.description("Sex management")
-				.contact(new Contact("Aziz Amerul Faozi", "labseni.com", "admin@labseni.com"))
+				.contact(new Contact("Aziz Amerul Faozi", "http://labseni.com", "admin@labseni.com"))
 				.license("Apache 2.0")
 				.licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
 				.version("0.0.1")

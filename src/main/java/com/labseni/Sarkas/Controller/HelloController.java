@@ -27,10 +27,6 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-//import net.guides.springboot2.springboot2swagger2.exception.ResourceNotFoundException;
-//import net.guides.springboot2.springboot2swagger2.model.Employee;
-//import net.guides.springboot2.springboot2swagger2.repository.EmployeeRepository;
-
 import com.labseni.Sarkas.model.User;
 import com.labseni.Sarkas.model.UserRepository;
 
@@ -42,7 +38,6 @@ public class HelloController {
 	private UserRepository userRepository;
 
 	@ApiOperation(value = "View list of available emplotess")
-
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<User> getAllUsers(){
 		return userRepository.findAll();
