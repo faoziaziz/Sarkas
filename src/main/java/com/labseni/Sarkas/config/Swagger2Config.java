@@ -1,3 +1,8 @@
+/*
+ * 	Author 		: Aziz Amerul Faozi
+ * 	Description : This code used to config swagger 2 on spring
+ * */
+
 package com.labseni.Sarkas.config;
 
 import static springfox.documentation.builders.PathSelectors.regex;

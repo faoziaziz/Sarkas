@@ -14,6 +14,10 @@ import io.swagger.annotations.ApiModelProperty;
 @Table(name="Crot")
 @ApiModel(description="All details about the Employee. ")
 public class User {
+	
+	  /*
+	   * 	Class definition for user
+	   * */
 	  @Id
 	  @GeneratedValue(strategy=GenerationType.IDENTITY)
 	  @Column(name="id")

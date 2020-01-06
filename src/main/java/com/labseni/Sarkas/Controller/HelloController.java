@@ -1,5 +1,8 @@
 /*
-	Hello controller 
+ * 	Author : Aziz Amerul Faozi
+ * 	Description :
+ * 		Hello controller this program under development to test some API
+ * 		 
 */
 
 package com.labseni.Sarkas.Controller;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import io.swagger.annotations.Api;
@@ -34,6 +38,9 @@ import com.labseni.Sarkas.model.UserRepository;
 @RequestMapping("/")
 @Api(value="Sexy management System", description = "Sexy mantap")
 public class HelloController {
+	/*
+	 * 	HelloController.Java to route main 
+	 * */
 	@Autowired
 	private UserRepository userRepository;
 
@@ -48,13 +55,26 @@ public class HelloController {
 	public String helloWorld() {	
 		return "Check dengan Spring";
 	}
+	
 
+	@ApiOperation(value="get crot operation")
 	@GetMapping(path="/crot")
 	public String helloCrot() {
 		return "Hello Crot";
 	}
 	
+	/*
+	 *  Post method to realize some how with
+	 * 	*/
 	
+	@ApiOperation(value="Post method")
+	@PostMapping(path="/postcrot")
+	public User helloPost(
+			@ApiParam(value = "Employee object store in database table", required = true) 
+			@Valid @RequestBody User user){
+		
+		return userRepository.save(user);
+	}
 	
 
 }
