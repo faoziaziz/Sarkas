@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
@@ -15,6 +16,7 @@ import io.swagger.annotations.ApiParam;
 
 import com.labseni.Sarkas.model.Member;
 import com.labseni.Sarkas.model.MemberRepository;
+
 
 @RestController
 @RequestMapping("/member")
@@ -26,10 +28,10 @@ public class MemberController {
 	
 	@ApiOperation(value = "get all member")
 	@GetMapping(path="/all")	
-	public String getAllMember() {
-		/* will give returnall member of labseni */
-		return "Hello Crot";
+	public @ResponseBody Iterable<Member> getAllMember(){
+		return memberRepository.findAll();
 	}
+	
 	
 	
 	@ApiOperation(value="Post method")
