@@ -31,8 +31,8 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-import com.labseni.Sarkas.model.User;
-import com.labseni.Sarkas.model.UserRepository;
+import com.labseni.Sarkas.model.Crot;
+import com.labseni.Sarkas.model.CrotRepository;
 
 @RestController
 @RequestMapping("/")
@@ -42,12 +42,12 @@ public class HelloController {
 	 * 	HelloController.Java to route main 
 	 * */
 	@Autowired
-	private UserRepository userRepository;
+	private CrotRepository crotRepository;
 
 	@ApiOperation(value = "View list of available emplotess")
 	@GetMapping(path="/all")
-	public @ResponseBody Iterable<User> getAllUsers(){
-		return userRepository.findAll();
+	public @ResponseBody Iterable<Crot> getAllCrots(){
+		return crotRepository.findAll();
 	}
 	
 	@ApiOperation(value = "get all user")
@@ -69,11 +69,11 @@ public class HelloController {
 	
 	@ApiOperation(value="Post method")
 	@PostMapping(path="/postcrot")
-	public User helloPost(
+	public Crot helloPost(
 			@ApiParam(value = "Employee object store in database table", required = true) 
-			@Valid @RequestBody User user){
+			@Valid @RequestBody Crot crot){
 		
-		return userRepository.save(user);
+		return crotRepository.save(crot);
 	}
 	
 

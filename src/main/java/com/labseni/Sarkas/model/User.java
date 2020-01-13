@@ -1,61 +1,37 @@
 package com.labseni.Sarkas.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 
-@Entity
-@Table(name="Crot")
-@ApiModel(description="All details about the Employee. ")
-public class User {
-	
-	  /*
-	   * 	Class definition for user
-	   * */
-	  @Id
-	  @GeneratedValue(strategy=GenerationType.IDENTITY)
-	  @Column(name="id")
+/**
+ * Created by OmiD.HaghighatgoO on 8/21/2019.
+ */
 
-	  @ApiModelProperty(notes = "The database generated User ID")
-	  private Integer id;
-	  
-	  @ApiModelProperty(notes = "The user name")
-	  @Column (name="name")
-	  private String name;
+@Data
+@NoArgsConstructor
+@RedisHash("User")
+public class User implements Serializable{
 
-	  @ApiModelProperty(notes = "The user email")
-	  @Column(name="email")
-	  private String email;
+    @Id
+    private Long id;
 
-	  public Integer getId() {
-	    return id;
-	  }
+    private String name;
+    private String surname;
+    private String age;
 
-	  public void setId(Integer id) {
-	    this.id = id;
-	  }
 
-	  public String getName() {
-	    return name;
-	  }
+    public User(Long id, String name, String surname, String age) {
 
-	  public void setName(String name) {
-	    this.name = name;
-	  }
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
 
-	  public String getEmail() {
-	    return email;
-	  }
 
-	  public void setEmail(String email) {
-	    this.email = email;
-	  }
-	
 
+    }
 }
